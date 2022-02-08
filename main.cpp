@@ -8,12 +8,13 @@ int doubleNumber(int numbers[], int dif[]) {
         }
         if (dif[abs(difference) - 1] == 0) {
             dif[abs(difference) - 1] = difference;
-        } else if (dif[abs(difference) - 1] == difference || dif[abs(difference) - 1] == 16){
-            return numbers[i];
-        } else {
+        } else if (dif[abs(difference) - 1] != difference && dif[abs(difference) - 1] != 16){
             dif[abs(difference) - 1] = 16;
+        } else {
+            return numbers[i];
         }
     }
+    return 0;
 }
 
 int main() {
